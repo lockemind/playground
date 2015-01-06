@@ -4,19 +4,20 @@ Repository for playing with technologies
 
 ## Installation (windows):
 
-1. Install cntlm
+Install cntlm
 
-2. ----
+> Add info from windows here
 
-3. Install git
+Install git
 
-3. Set env variables
+Set env variables
+
 
     setx http_proxy http://127.0.0.1:3128
 
     setx https_proxy http://127.0.0.1:3128
 
-4. Config git
+Config git
 
     git config --global http.proxy  http://127.0.0.1:3128
 
@@ -24,21 +25,21 @@ Repository for playing with technologies
 
 ## Installation (mac):
 
-1. Install xcode (download from app store)
+Install xcode (download from app store)
 
-2. Set env variables
+Set env variables
 
     export http_proxy=http://127.0.0.1:8080
 
     export https_proxy=http://127.0.0.1:8080
 
-3. Install [homebrew](http://brew.sh/)
+Install [homebrew](http://brew.sh/)
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-4. Install git (requires xcode)
+Install git (requires xcode)
 
-5. Config git
+Config git
 
     git config --global http.proxy  http://127.0.0.1:8080
 
