@@ -62,4 +62,5 @@ Config git
     git push origin master
 
 When pushing, git will probably ask for your github login credentials
+[generating ssh keys](https://help.github.com/articles/generating-ssh-keys/)
 
