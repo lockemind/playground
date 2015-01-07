@@ -6,9 +6,27 @@ Repository for playing with technologies
 
 Install cntlm
 
-> Add info from windows here
+	copy cntlm.ini "c:\Program Files (x86)\Cntlm\"
+
+	cd c:\Program Files (x86)\Cntlm
+
+	notepad cntlm.ini #Change username on this file
+
+	net stop cntlm
+	net start cntlm
+
+	cntlm -M http://www.google.com
+
+	notepad cntlm.ini #copy paste hash on PassNTLMv2
+
+	net stop cntlm
+	net start cntlm
 
 Install git
+
+Download Git from website and run installer
+
+	setx path "%PATH%;C:\Program Files (x86)\Git\bin;
 
 Set env variables
 
