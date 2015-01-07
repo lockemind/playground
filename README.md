@@ -12,7 +12,6 @@ Install git
 
 Set env variables
 
-
     setx http_proxy http://127.0.0.1:3128
 
     setx https_proxy http://127.0.0.1:3128

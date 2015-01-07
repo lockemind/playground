@@ -1,0 +1,23 @@
+{
+  "name": "playground",
+  "version": "0.0.1",
+  "description": "Repository for playing with technologies",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.10.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiagotaveiragomes/playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagotaveiragomes/playground/issues"
+  },
+  "homepage": "https://github.com/tiagotaveiragomes/playground"
+}
