@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/?id/', function(req, res) {
-
-    res.send({ cenas : req.param.id })
+router.get('/', function(req, res) {
+  res.render('index', { title: 'HTML V' });
 });
 
 module.exports = router;
