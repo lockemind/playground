@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'HTML V' });
+    res.send({ cenas : 'megas' })
 });
 
 module.exports = router;
