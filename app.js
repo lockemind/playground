@@ -8,12 +8,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var ricardo = require('./routes/ricardo');
-var pedro = require('./routes/pedro');
-var miguel = require('./routes/miguel');
-var luciano = require('./routes/luciano');
-var portas = require('./routes/portas');
-
 var app = express();
 
 // view engine setup
@@ -27,23 +21,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use(function(req, res, next){
-
-//     // localhost/get/cenas?id=1
-//     var a = req.query.id == 1 ? true : false
-//     req.a = a
-//     next()
-// });
-
-// app.use(function(req, res, next){
-
-//     if(req.a) res.send(req.a)
-//     else res.send('cenas')
-// })
-
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', routes)
+app.use('/users', users)
+
+app.use('/ricardo', require('./routes/ricardo'))
+app.use('/pedro', require('./routes/pedro'))
+app.use('/miguel', require('./routes/miguel'))
+app.use('/luciano', require('./routes/luciano'))
+app.use('/portas', require('./routes/portas'))
 
 
 // catch 404 and forward to error handler
