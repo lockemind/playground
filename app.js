@@ -27,19 +27,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(function(req, res, next){
+// app.use(function(req, res, next){
 
-    // localhost/get/cenas?id=1
-    var a = req.query.id == 1 ? true : false
-    req.a = a
-    next()
-});
+//     // localhost/get/cenas?id=1
+//     var a = req.query.id == 1 ? true : false
+//     req.a = a
+//     next()
+// });
 
-app.use(function(req, res, next){
+// app.use(function(req, res, next){
 
-    if(req.a) res.send(req.a)
-    else res.send('cenas')
-})
+//     if(req.a) res.send(req.a)
+//     else res.send('cenas')
+// })
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
