@@ -26,7 +26,7 @@ Install git
 
 Download Git from website and run installer
 
-	setx path "%PATH%;C:\Program Files (x86)\Git\bin;
+	setx path "%PATH%;C:\Program Files (x86)\Git\bin;"
 
 Set env variables
 
