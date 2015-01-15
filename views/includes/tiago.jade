@@ -1,5 +1,46 @@
 
 script(src="javascripts/users/tiago.js")
 
-h1 Hello!
+link(rel='stylesheet', href='/stylesheets/tiago.css')
 
+style.
+
+    #tiago > h1[attr="cenas"] {
+
+        border : 5px dotted white
+    }
+
+    .tiago-important {
+
+        background : blue;
+    }
+
+    .tiago-nice {
+
+        background : green !important;
+    }
+
+script.
+
+    $(function(){
+
+        var $node = $('#tiago > h1:first')
+
+        $node.addClass('tiago-important')
+
+        $node.css({ background : 'red' })
+
+        $node.click(function foo(){
+
+            $(this).toggleClass('tiago-nice')
+        })
+    })
+
+div.cenas
+    h1(style="color:red;") this is a title first
+    h1(style="color:red;") this is a title
+
+h1(style="color:red; ", attr="cenas") this is a title
+h1(style="color:red;") this is a title
+h1(style="color:red;") this is a title
+h1(style="color:red;") this is a title
