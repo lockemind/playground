@@ -31,6 +31,7 @@ app.use('/miguel', require('./routes/miguel'))
 app.use('/luciano', require('./routes/luciano'))
 app.use('/portas', require('./routes/portas'))
 app.use('/tiago', require('./routes/tiago'))
+app.use('/brito', require('./routes/brito'))
 
 
 // catch 404 and forward to error handler
