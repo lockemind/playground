@@ -4,13 +4,21 @@ style.
 	.normal-box {
 		background: green;
 		border: 1px solid red;
-		width: 250px;
+		width: 50px;
+		height: 50px;
+		transition-duration: 0.2s;
+		border-radius: 25px;
+		text-align: center;
 	}
 
 	.highlight-box {
 		background: blue;
-		border 1px dashed red;
-		width: 500px;
+		border: 5px dashed red;
+		width: 50px;
+		height: 50px;
+		transform:rotate(20deg);
+		transition-duration: 0.2s;
+		border-radius: 0px;
 	}
 
 	.redtext {
@@ -19,9 +27,31 @@ style.
 
 script.
 	$(function() {
-		var $myNode = $('#brito > div')
-		$myNode.addClass('normal-box')
+		//
+		// Aula 1
+		//
+		// var $myNode = $('#brito > div')
+		// $myNode.addClass('normal-box')
+
+		//$myNode.click( function fooClick() {
+		//	$(this).toggleClass('highlight-box')
+		//})
+
+		var $rotationVal 
+
+		//
+		// Aula 2
+		//
+		$.ajax({
+			url : "/brito",
+			type: "GET",
+		}).done(function(data){
+			console.log(data)
+			$rotationVal = parseFloat(data)
+		})
+
+		
 	})
 
-div.newBox
-	p hello there!
+div
+	p Click me!
