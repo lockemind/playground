@@ -1,1 +1,47 @@
-h1 Miguel Jade
+style.
+
+    .miguel-square{
+
+        position : absolute;
+        background : blue;
+        width : 30px;
+        height : 30px;
+
+    }
+
+
+
+script.
+
+    $(function(){
+
+        $.ajax({
+            url: "/miguel",
+            type: "GET"
+
+        }).done(function(n){
+            
+            var $node = $('.miguel-square')
+
+            draw(parseFloat(n)
+        });
+
+    })
+
+    function draw(n){
+
+        window.requestAnimationFrame(moveIt);
+    }
+
+
+    function moveIt(){
+
+        var x = n;
+        var y = n;
+    }
+
+
+
+div.miguel-square
+
+
