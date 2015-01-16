@@ -17,3 +17,22 @@ script.
 			$(this).toggleClass('pedro-selected')
 		})
 	})  
+
+
+	$(function(){
+	
+		var $node = $('#pedro p')
+
+		$ajax({
+			url:"pedro/cycle",
+			type: "GET",
+		}).done(function(data) {
+
+			pedroDraw()
+		})
+
+		$node.click( function toggleSelect() {
+
+			$(this).toggleClass('pedro-selected')
+		})
+	})  
