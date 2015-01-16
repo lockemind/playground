@@ -27,13 +27,31 @@ style.
 
 script.
 	$(function() {
-		var $myNode = $('#brito > div')
-		$myNode.addClass('normal-box')
+		//
+		// Aula 1
+		//
+		// var $myNode = $('#brito > div')
+		// $myNode.addClass('normal-box')
 
-		$myNode.click( function fooClick() {
-			$(this).toggleClass('highlight-box')
+		//$myNode.click( function fooClick() {
+		//	$(this).toggleClass('highlight-box')
+		//})
+
+		var $rotationVal 
+
+		//
+		// Aula 2
+		//
+		$.ajax({
+			url : "/brito",
+			type: "GET",
+		}).done(function(data){
+			console.log(data)
+			$rotationVal = parseFloat(data)
 		})
+
+		
 	})
 
-div.newBox
+div
 	p Click me!
