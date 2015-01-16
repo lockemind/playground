@@ -4,43 +4,50 @@ script(src="javascripts/users/tiago.js")
 link(rel='stylesheet', href='/stylesheets/tiago.css')
 
 style.
+    .tiago-dummy {
 
-    #tiago > h1[attr="cenas"] {
-
-        border : 5px dotted white
-    }
-
-    .tiago-important {
-
-        background : blue;
-    }
-
-    .tiago-nice {
-
-        background : green !important;
+        position : absolute;
+        background : green;
+        width : 20px;
+        height : 20px;
     }
 
 script.
 
     $(function(){
 
-        var $node = $('#tiago > h1:first')
+        $node = $('#tiago .tiago-dummy:first')
+        console.log($node)
 
-        $node.addClass('tiago-important')
+        var n
 
-        $node.css({ background : 'red' })
+        $.ajax({
+            url : "/tiago/rand",
+            type: "GET",
+        }).done(function(data) {
 
-        $node.click(function foo(){
-
-            $(this).toggleClass('tiago-nice')
+            console.log(data)
+            tick = true
+            n = parseFloat(data)
+            draw()
         })
+
+        $('.tiago-end').click(function(){
+
+            tick = !tick
+            draw()
+        })
+
+        function draw(){
+
+            var x = n + Math.random() * 100
+            var y = n + Math.random() * 100
+
+            $node.css({ top : x, left : y })
+            if(tick)
+                window.requestAnimationFrame(draw)
+        }
     })
 
-div.cenas
-    h1(style="color:red;") this is a title first
-    h1(style="color:red;") this is a title
-
-h1(style="color:red; ", attr="cenas") this is a title
-h1(style="color:red;") this is a title
-h1(style="color:red;") this is a title
-h1(style="color:red;") this is a title
+.tiago-dummy
+button.tiago-end toggle
