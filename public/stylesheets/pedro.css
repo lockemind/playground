@@ -1,0 +1,19 @@
+.baseContainer {
+	height: 20em;
+	width: auto;
+	background-color: lightgrey;
+
+}
+
+.innerContainer {
+	height: 10em;
+	width: auto;
+	background-color: grey;
+	vertical-align: center;
+	padding: 4em 2em; 
+}
+
+.pedro-selected {
+
+	background-color: black;
+}

@@ -1,3 +1,19 @@
-p Pedro
-p Amaral
-p first jade
+link(rel='stylesheet', href='/stylesheets/pedro.css')
+
+div.baseContainer 
+	div.innerContainer
+		p Pedro
+		p Amaral
+		p first jade
+
+script.
+
+	$(function(){
+	
+		var $node = $('#pedro p')
+
+		$node.click( function toggleSelect() {
+
+			$(this).toggleClass('pedro-selected')
+		})
+	})  

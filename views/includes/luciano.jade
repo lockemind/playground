@@ -1,2 +1,27 @@
 script(src="javascripts/users/luciano.js")
-<font color = "0xff8800">Huhuu! ;)</font>
+
+
+style.
+
+    .luciano-a {
+        background : white;
+    }
+
+    .luciano-b {
+        background : red;
+    }
+
+
+
+script.
+    $(function(){
+        var $node = $('#luciano h3:first')
+        $node.addClass('luciano-a')
+        debugger
+        $node.mouseover(function(){
+            $(this).toggleClass('luciano-b')
+        })
+    })
+
+h3 1st header
+h3 2nd header
