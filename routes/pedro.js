@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res) {
+router.get('/colorCycle', function(req, res) {
 
-  res.send({name:'Pedro', surname:'Amaral'});
-
+    var color = "#"+Date.now().toString().slice(7,13)
+	res.send({color: color});
 });
 
 module.exports = router;
