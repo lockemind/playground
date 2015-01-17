@@ -20,19 +20,44 @@ script.
 
 
 	$(function(){
-	
-		var $node = $('#pedro p')
+		var localData
+		var $node = $('#pedro .pedro-circle:first')
+		var xPosition = 0
+		var direction = "leftToRight"
 
-		$ajax({
-			url:"pedro/cycle",
-			type: "GET",
-		}).done(function(data) {
+		function colorShift(){ 
+			$.ajax({
+				url:"pedro/colorCycle",
+				type: "GET",
+			}).done(function(data) {
+				
+				$node.css({ background: data.color})
+			})
+		}
 
-			pedroDraw()
-		})
+		function pedroDraw(){
+			
+			if (direction == "leftToRight") {
+				xPosition++	
+				if (xPosition == 300) {
+					direction = "rightToLeft"
+					colorShift()
+				}
+			} else {
+				xPosition--
+				if (xPosition == 0) {
+					direction = "leftToRight"
+					colorShift()
+				}
+			}
+			
+			$node.css({ left:xPosition+"px"})
+			
+			window.requestAnimationFrame(pedroDraw)
+		}
 
-		$node.click( function toggleSelect() {
-
-			$(this).toggleClass('pedro-selected')
-		})
+		colorShift()
+		pedroDraw()
 	})  
+
+.pedro-circle
