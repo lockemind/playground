@@ -1,14 +1,48 @@
+style.
+    .g-dummy {
+
+        position : absolute;
+        background : red;
+        width : 10px;
+        height : 10px;
+    }
+
 script.
 
-	$(function {
-		console.log($node.html())
-		console.log('INICIO')
-	})
+    $(function(){
 
-h1 gustavo first line
+        var $node = $('#gustavo .g-dummy:first')
+        console.log($node)
 
-input#teste(
-  type='checkbox'
-  name='teste'
-  checked
-)
+        var n, tick
+
+        $.ajax({
+            url : "/gustavo/box",
+            type: "GET",
+        }).done(function(data) {
+
+            console.log(data)
+            tick = true
+            n = parseFloat(data)
+            draw()
+        })
+
+        $('.g-end').click(function(){
+
+            tick = !tick
+            draw()
+        })
+
+        function draw(){
+
+            var x = n + Math.random() * 100
+            var y = n + Math.random() * 100
+
+            $node.css({ top : x, left : y })
+            if(tick)
+                window.requestAnimationFrame(draw)
+        }
+    })
+
+.g-dummy
+button.g-end stop

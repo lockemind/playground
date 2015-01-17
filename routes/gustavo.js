@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/gustavo', function(req, res) {
+router.get('/box', function(req, res) {
     //res.send('Hello world')
-    res.send({obj:'http://wwww.gustavo.com/'})
+    res.send("" + Math.random()*100)
     // res.send({ cenas : 'megas' })
 });
 
