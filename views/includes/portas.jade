@@ -1,25 +1,33 @@
-script(src="javascripts/users/portas.js")
-
 link(rel='stylesheet', href='/stylesheets/portas.css')
 
 h2 Bouncing Ball
 
-#circulo.circle
-
 script.
 
-    $function() {
-      $ajax({
-          url: "/bouncing",
-          type: "GET"
-      }).done(function(data){
-            var $ball = $('#circulo')
-            console.log("ursooooo")
+    $(function(){
 
-            $ball.animate({
-              left: "+=300px"
-              }, 1500).find("circulo").effect( "bounce", { times: 4,
-              distance: 100 }, 1500 );
-          }
-      )
-    }
+        var $node = $('#portas .circle:first')
+        console.log($node)
+
+        var n, tick
+
+        $.ajax({
+            url : "/portas/bouncing",
+            type: "GET",
+        }).done(function(data) {
+
+            console.log("Portas "+data)
+            n = parseFloat(data)
+            draw()
+        })
+
+        function draw(){
+
+            var x = n + Math.random() * 300
+            var y = n + Math.random() * 100
+            $node.css({ left : y , right: x})
+            window.requestAnimationFrame(draw)
+        }
+    })
+
+.circle
