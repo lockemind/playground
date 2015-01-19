@@ -17,3 +17,47 @@ script.
 			$(this).toggleClass('pedro-selected')
 		})
 	})  
+
+
+	$(function(){
+		var localData
+		var $node = $('#pedro .pedro-circle:first')
+		var xPosition = 0
+		var direction = "leftToRight"
+
+		function colorShift(){ 
+			$.ajax({
+				url:"pedro/colorCycle",
+				type: "GET",
+			}).done(function(data) {
+				
+				$node.css({ background: data.color})
+			})
+		}
+
+		function pedroDraw(){
+			
+			if (direction == "leftToRight") {
+				xPosition++	
+				if (xPosition == 300) {
+					direction = "rightToLeft"
+					colorShift()
+				}
+			} else {
+				xPosition--
+				if (xPosition == 0) {
+					direction = "leftToRight"
+					colorShift()
+				}
+			}
+			
+			$node.css({ left:xPosition+"px"})
+			
+			window.requestAnimationFrame(pedroDraw)
+		}
+
+		colorShift()
+		pedroDraw()
+	})  
+
+.pedro-circle
