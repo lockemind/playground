@@ -15,14 +15,13 @@ style.
 script.
 
     $(function(){
-
+        var n, $node, tick
+        
         $node = $('#tiago .tiago-dummy:first')
         console.log($node)
 
-        var n
-
         $.ajax({
-            url : "/tiago/rand",
+            url : "/ricardo/rand",
             type: "GET",
         }).done(function(data) {
 

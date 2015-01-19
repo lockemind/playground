@@ -25,11 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes)
 app.use('/users', users)
 
+app.use('/gustavo', require('./routes/gustavo'))
 app.use('/ricardo', require('./routes/ricardo'))
 app.use('/pedro', require('./routes/pedro'))
 app.use('/miguel', require('./routes/miguel'))
 app.use('/luciano', require('./routes/luciano'))
 app.use('/portas', require('./routes/portas'))
+app.use('/tiago', require('./routes/tiago'))
+app.use('/brito', require('./routes/brito'))
 
 
 // catch 404 and forward to error handler
