@@ -1,4 +1,52 @@
-link(rel='stylesheet', href='/stylesheets/ricardo.css')
 
-#ricardoHeaderRed Ricardo Tavares Jade 
-#ricardoHeaderGreen (finalmente!)
+script(src="javascripts/users/tiago.js")
+
+link(rel='stylesheet', href='/stylesheets/tiago.css')
+
+style.
+    .tiago-dummy {
+
+        position : absolute;
+        background : green;
+        width : 20px;
+        height : 20px;
+    }
+
+script.
+
+    $(function(){
+        var n, $node, tick
+        
+        $node = $('#tiago .tiago-dummy:first')
+        console.log($node)
+
+        $.ajax({
+            url : "/ricardo/rand",
+            type: "GET",
+        }).done(function(data) {
+
+            console.log(data)
+            tick = true
+            n = parseFloat(data)
+            draw()
+        })
+
+        $('.tiago-end').click(function(){
+
+            tick = !tick
+            draw()
+        })
+
+        function draw(){
+
+            var x = n + Math.random() * 100
+            var y = n + Math.random() * 100
+
+            $node.css({ top : x, left : y })
+            if(tick)
+                window.requestAnimationFrame(draw)
+        }
+    })
+
+.tiago-dummy
+button.tiago-end toggle

@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes)
 app.use('/users', users)
 
+app.use('/gustavo', require('./routes/gustavo'))
 app.use('/ricardo', require('./routes/ricardo'))
 app.use('/pedro', require('./routes/pedro'))
 app.use('/miguel', require('./routes/miguel'))
