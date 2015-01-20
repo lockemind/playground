@@ -21,9 +21,15 @@
 .pedro-circle {
 	position: relative;
     width: 100px;
-	height: 100px;
-	background: #056546;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px
+	height: 100px;	
+	border-radius: 50%;
+	border : 5px solid black;
+}
+
+.pedro-circle .content{
+
+	border-radius: 50%;
+	width : inherit;
+	height : inherit;
+	position : absolute;
 }
