@@ -6,3 +6,5 @@ $(function(){
 
     console.log($root.get(0), root)
 })
+
+app.controller()
